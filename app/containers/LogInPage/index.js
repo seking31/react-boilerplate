@@ -1,7 +1,3 @@
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 import React, { Component } from 'react';
 
 class Login extends Component {
@@ -15,42 +11,29 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <form>
         <h1>{this.state.username}</h1>
         <h1>{this.state.password}</h1>
-        <MuiThemeProvider>
-          <div>
-            <AppBar title="Login" />
-            <TextField
-              hintText="Enter your Username"
-              floatingLabelText="Username"
-              onChange={(event, newValue) =>
-                this.setState({ username: newValue })
-              }
-            />
-            <br />
-            <TextField
-              type="password"
-              hintText="Enter your Password"
-              floatingLabelText="Password"
-              onChange={(event, newValue) =>
-                this.setState({ password: newValue })
-              }
-            />
-            <br />
-            <RaisedButton
-              label="Submit"
-              primary
-              style={style}
-              onClick={event => this.handleClick(event)}
-            />
-          </div>
-        </MuiThemeProvider>
-      </div>
+        Enter Your Username:{' '}
+        <input
+          onChange={(event, newValue) => this.setState({ username: newValue })}
+          type="text"
+          name="FirstName"
+        />
+        Enter Your Password:{' '}
+        <input
+          type="text"
+          name="LastName"
+          onChange={(event, newValue) => this.setState({ password: newValue })}
+        />
+        <input
+          type="submit"
+          value="Submit"
+          onClick={event => this.handleClick(event)}
+        />
+      </form>
     );
   }
 }
-const style = {
-  margin: 15,
-};
+
 export default Login;

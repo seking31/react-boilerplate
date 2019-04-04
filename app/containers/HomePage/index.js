@@ -5,9 +5,9 @@ function HomePage() {
     <header>
       <nav>
         <ul>
-          <li>
+          <button type="button">
             <Link to="/login">Log In</Link>
-          </li>
+          </button>
         </ul>
       </nav>
     </header>
